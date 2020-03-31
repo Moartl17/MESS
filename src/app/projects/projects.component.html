@@ -1,0 +1,24 @@
+<h1 style="padding:20px">Projektübersicht</h1>
+<ul *ngFor="let cv of projects" >
+    <div class="project">
+        <div class="project-heading" [class.expanded]="cv.isExpanded" (click)="toggle(cv)">
+          {{ cv.from | date: 'MM/yyyy' }} - {{ cv.to | date: 'MM/yyyy' }}: 
+          <span style="font-weight: bold">{{ cv.name }} </span>bei {{ cv.company }}
+            <span class="glyphicon" [ngClass]="{
+                'glyphicon-chevron-up': cv.isExpanded,
+                'glyphicon-chevron-down': !cv.isExpanded
+            }"></span>
+        </div>
+        
+        <div class="project-body" *ngIf="cv.isExpanded">
+            <span *ngIf="cv.shortDesc"> {{ cv.shortDesc }}: </span><br/>
+            <ul *ngFor="let subProj of cv.subProjects">
+                <li>{{subProj.project}}</li>
+            </ul>
+            <div *ngIf="cv.technologies">
+            <br/>
+            Technologien: {{ cv.technologies }}
+        </div>
+        </div>
+    </div>
+    </ul>
