@@ -1,18 +1,14 @@
+<!-- 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" routerLink="/home">
         <img src="../../assets/SmallLogo_withoutText.png" width="30" height="30" class="d-inline-block align-top"
-            style="padding-right: 5px">Navigation</a>
-    <button class="navbar-toggler" type="button" data-trigger="#main_nav" (click)="onClick()">
+            style="padding-right: 5px">Navigation
+    </a>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse" id="main_nav">
-        <div class="offcanvas-header mt-3">
+    <div class="collapse navbar-collapse" id="main_nav" [ngClass]="{ 'show': navbarOpen }">
 
-            <button class="btn btn-outline-danger btn-close float-right"> &times Close </button>
-
-            <h5 class="py-2 text-white">Main navbar</h5>
-
-        </div>
         <ul class="nav nav-pills your_nav_class">
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" routerLink="/home">Home</a>
@@ -25,6 +21,30 @@
             </li>
         </ul>
     </div>
+</nav>
+-->
 
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/home">
+        <img src="../../assets/SmallLogo_withoutText.png" width="30" height="30" class="d-inline-block align-top"
+            style="padding-right: 5px">Navigation
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" 
+    aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main_nav" style="max-height: fit-content">
+        <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/home">Home</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/person">Zur Person</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/cv">Lebenslauf</a>
+            </li>
+        </ul>
+    </div>
 </nav>
