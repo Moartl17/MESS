@@ -9,6 +9,19 @@ export class ProjectsService {
   {
    var projects=
   [
+    {
+      id: 12, name: ".NET 4.5 Angular Backend und Frontend Entwickler", from: new Date(2019, 10), company: "Best Secret GmbH, Germany",
+      shortDesc: "Entwicklung eines elektronischen Logistikmanagement Systems",
+      subProjects:
+      [
+        {project: "Entwicklung diverser Web Frontends basierend auf Angular JS, ASP.NET und Angular 8 für Benutzeranwendungen zur Abwicklung von Logistik- und Kommisionierungsaufgaben"},
+        { project: "Entwicklung von Angular Web Frontend Software auf Android Scannergeräten für das Lager"},
+        { project: "Aufbau und Pflege eines TeamCity basierten Build und Deployment Prozesses" },
+        { project: "Entwicklung von .NET Services und API’s für die Backend Anbindung"}
+      ],
+      technologies: ".NET 4.5, .NET Core 3.1, Angular 3.0, ASP.NET, VS 2017 + 2019, TeamCity, Bitbucket, GIT, MS SQL Server, Confluence, JIRA, SCRUM, Lucidchart",
+      isExpanded: true
+    },
     { id: 11, name: "NET 4.5 + .NET Core 2.0 Entwickler und Solution Architekt", from: new Date(2016, 9), to: new Date(2019, 9), company: "Interflex Datensysteme GmbH, Germany",
     shortDesc: "Entwicklung und Migration eines Zutrittssystemes für BMW weltweit", 
     subProjects : 
@@ -20,7 +33,7 @@ export class ProjectsService {
       { project : "Erstellung komplexer SQL Views und Reports zur Vorbereitung der Datenmigration" }
     ],
     technologies: ".NET 4.5, .NET Core, ASP.NET, VS 2015 + 2017, TFS + GIT, Oracle, Oracle SQL Developer, Draw IO, JIRA, SCRUM",
-    isExpanded : true},
+    isExpanded : false},
     { id: 10, name: ".NET 4.5 Web Entwickler", from: new Date(2015, 3), to: new Date(2015, 9), company: "Ingram Micro, Germany",
     shortDesc: "Entwicklung einer Web Anwendung für die Buchung und Abwicklung von Advertisements und Werbeschaltungen auf verschiedenen Platformen", 
     subProjects : 
