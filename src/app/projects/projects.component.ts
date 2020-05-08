@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../projects.service';
+import { Project } from '../shared/project';
 
 @Component({
   selector: 'projects',
@@ -8,21 +9,21 @@ import { ProjectsService } from '../projects.service';
 })
 export class ProjectsComponent implements OnInit {
 
-  projects;
+  projectsList: Array<Project>;
   constructor(private projectsService : ProjectsService) { 
-    this.projects = projectsService.getAllProjects();
   }
 
 
   toggle(selectedCV)
   {
-    // this.projects.forEach(element => {
-    //   element.isExpanded = false;
-    // });
     selectedCV.isExpanded = !selectedCV.isExpanded;
   }
 
   ngOnInit() {
+    this.projectsList = this.projectsService
+    .getAllProjects();
+
+    // console.log(this.projectsList);
   }
 
 }

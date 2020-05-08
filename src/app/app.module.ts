@@ -1,6 +1,8 @@
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+// import {AngularFireModule } from 'angularfire2';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,8 +10,10 @@ import { ProjectsComponent } from './projects/projects.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { CertificateComponent } from './certificate/certificate.component';
 import { PersonComponent } from './person/person.component';
+import { environment } from '../environments/environment';
+import { ProjectsService } from './projects.service';
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,12 @@ import { PersonComponent } from './person/person.component';
     FooterComponent,
     NavbarComponent,
     HomeComponent,
-    CertificateComponent,
     PersonComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
@@ -31,7 +36,7 @@ import { PersonComponent } from './person/person.component';
       { path: '**', component: HomeComponent }
     ])
   ],
-  providers: [],
+  providers: [ProjectsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
