@@ -22,7 +22,7 @@
     "@angular/router": "~9.1.13",
     "angularfire2": "^5.4.2",
     "bootstrap": "^4.4.1",
-    "firebase": "^7.14.2",
+    "firebase": "^11.0.2",
     "font-awesome": "^4.7.0",
     "rxjs": "^6.6.7",
     "rxjs-observable": "0.0.7",
