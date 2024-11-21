@@ -2,7 +2,6 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // import {AngularFireModule } from 'angularfire2';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +12,6 @@ import { HomeComponent } from './home/home.component';
 import { PersonComponent } from './person/person.component';
 import { environment } from '../environments/environment';
 import { ProjectsService } from './projects.service';
-import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -26,8 +24,8 @@ import { AngularFireModule } from '@angular/fire';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFirestoreModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
